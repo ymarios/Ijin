@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var photoURI: Uri
 
+
+
+
     private val cameraLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             if (it.resultCode == Activity.RESULT_OK) {
@@ -44,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         setupUI()
-
+        Toast.makeText(this,"testes",Toast.LENGTH_LONG)show()
         RetrofitConfig().getIjin().getAllIjin().enqueue(object: Callback<GetIjinResponse> {
             override fun onResponse(
                 call: Call<GetIjinResponse>,
